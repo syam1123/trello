@@ -3,10 +3,6 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 var ghPages = require('gulp-gh-pages');
-import {
-  stream as wiredep
-}
-from 'wiredep';
 var historyApiFallback = require('connect-history-api-fallback')
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -53,7 +49,7 @@ gulp.task('serve', ['styles'], () => {
   ]).on('change', reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('bower.json', ['wiredep', 'fonts']);
+  gulp.watch('bower.json', [ 'fonts']);
 });
 
 gulp.task('html', ['styles'], () => {

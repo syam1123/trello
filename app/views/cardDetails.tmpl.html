@@ -3,7 +3,7 @@
     <h1>Edit task</h1>
     <div>
       <div ng-if="!isNameEditing" ng-click="editName()" class="name-container">{{selectedCard.name}}</div>
-      <div ng-if="isNameEditing" ><input type="text" ng-model="selectedCard.name"></div>
+      <div ng-if="isNameEditing" ><input class="name-input" type="text" ng-model="selectedCard.name"></div>
     </div>
     <div>
       <div ng-if="!isDetailEditing" ng-click="editDetails()" class="details">

@@ -1,0 +1,20 @@
+<md-bottom-sheet >
+  <div class="details-container">
+    <h1>Edit task</h1>
+    <div>
+      <div ng-if="!isNameEditing" ng-click="editName()" class="name-container">{{selectedCard.name}}</div>
+      <div ng-if="isNameEditing" ><input type="text" ng-model="selectedCard.name"></div>
+    </div>
+    <div>
+      <div ng-if="!isDetailEditing" ng-click="editDetails()" class="details">
+        {{selectedCard.details? selectedCard.details: 'click to add description'}}
+      </div>
+      <div ng-if="isDetailEditing">
+        <textarea name="" ng-model="selectedCard.details"></textarea>
+      </div>
+    </div>
+    <div ng-if="isDetailEditing || isNameEditing">
+      <button ng-click="saveDetails()">Save</button>
+    </div>
+  </div>
+</md-bottom-sheet>

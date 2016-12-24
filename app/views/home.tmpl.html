@@ -1,0 +1,45 @@
+<div class="section-container">
+  <div class="pending-section">
+    <div class="pending-cards">
+      <div class="heading">
+        <h1>Pending</h1>
+        <p>{{home.pendingCards.length >0?'Man! Move them fast' : 'empty' }}</p>
+      </div>
+      <div class="actual-card-container">
+        <div class="each-card" ng-repeat="card in home.pendingCards">
+          <div class="each-card-text" ng-if="!card.isNameEditing">
+            <span ng-click="home.editCard(card)">{{card.name}}</span>
+            <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="home.editCardName(card, $event)"></i>
+            <i class="fa fa-arrow-right" aria-hidden="true" ng-click="home.moveCard(card, $event)"></i>
+          </div>
+          <div ng-if="card.isNameEditing" class="add-more-form">
+            <input type="text" placeholder="Name the card" ng-model="home.cardName">
+            <button ng-click="home.changeName(home.cardName, card)">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="add-more">
+        <div ng-if="!home.addMoreOn">
+          <button class="add-more-button" ng-click="home.showAddMore()">Add new card</button>
+        </div>
+        <div ng-if="home.addMoreOn" class="add-more-form">
+          <input type="text" placeholder="Name the card" ng-model="home.cardName">
+          <button ng-click="home.addNewCard(home.cardName)">Add</button>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="done-section">
+    <div class="done-cards">
+      <div class="heading">
+        <h1>Done</h1>
+        <p>{{home.doneCards.length >0?'You good. Done!' : 'Are you sleeping' }}</p>
+      </div>
+      <div class="actual-card-container">
+        <div class="each-card" ng-repeat="card in home.doneCards">
+          <div class="each-card-text"><span>{{card.name}}</span></div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

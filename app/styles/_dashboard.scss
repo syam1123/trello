@@ -1,0 +1,121 @@
+*{
+  outline: none;
+  text-decoration: none;
+}
+#main{
+  height: 100%;
+  background: linear-gradient(#0079bf, #00bcd4);
+}
+.section-container{
+  display: flex;
+  max-width: 800px;
+  margin: auto;
+  .pending-section{
+    flex: 1;
+  }
+  .done-section{
+    flex: 1;
+  }
+  .pending-cards, .done-cards{
+    background: #eee;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+  }
+  .heading{
+    h1{
+      margin: 0;
+      font-size: 22px;
+      text-align: center;
+      color: #444;
+      font-weight: 500;
+    }
+    p{
+      margin: 0;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+    }
+  }
+  .add-more{
+    padding: 10px 0px;
+    .add-more-button{
+      width: 100%;
+      background: #eee;
+      border: none;
+      border-radius: 4px;
+      color: #666;
+    }
+  }
+  .add-more-form{
+    display: flex;
+    input{
+      flex: 1;
+      border-radius: 3px;
+      border: 1px solid #007dc0;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0;
+      padding: 6px 10px;
+    }
+    button{
+      background: #007dc0;
+      color: white;
+      border: 1px solid #007dc0;
+      font-size: 16px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      padding: 3px 10px;
+    }
+  }
+  .actual-card-container{
+    max-height: 70vh;
+    overflow: scroll;
+    .each-card{
+      background: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 500;
+      color: #264863;
+      margin: 6px 0px;
+      .each-card-text{
+        display: flex;
+        align-items: center;
+        span{
+          flex: 1;
+          padding: 12px 8px;
+        }
+        i{
+          visibility: hidden;
+          margin-right: 10px;
+        }
+      }
+      &:hover{
+        .each-card-text{
+          i{
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+.details-container{
+  margin: auto;
+  max-width: 800px;
+  .name-container{
+    padding: 10px;
+    background: #eee;
+    border-radius: 3px;
+    margin: 10px 0px;
+    cursor: pointer;
+  }
+  .details{
+    padding: 10px;
+    background: #eee;
+    border-radius: 3px;
+    margin: 10px 0px;
+    cursor: pointer;
+  }
+}
